@@ -31,7 +31,6 @@ $(document).ready(function () {
         } else $('.about-me__image').removeClass('transform-image')
 
         if(st < skill_offet) {
-            console.log('a');
             $('.progress-line').removeClass('progress-line-animation');
             $('.progess-line-span').removeClass('progess-line-span-animation')
         } else {
