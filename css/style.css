@@ -2,6 +2,8 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Custom Properties */
@@ -49,6 +51,11 @@ img {
 :focus {
     outline: 3px solid var(--clr-accent);
     outline-offset: 3px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-accent);
 }
 
 .btn {
@@ -283,7 +290,7 @@ h3 {
 }
 
 .about-me__body img {
-    width: 20rem;
+    max-width: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -352,5 +359,70 @@ h3 {
 
     .service+.service {
         margin-left: 2em;
+    }
+}
+
+/* my skills */
+
+.my-skill {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section__title--skill {
+    color: var(--clr-accent);
+    text-align: center;
+}
+
+.info i {
+    color: var(--clr-accent);
+    font-size: var(--fs-h3);
+}
+
+.skills-bar .bar {
+    margin: 20px 0;
+}
+
+.skills-bar .bar:first-child {
+    margin-top: 0;
+}
+
+.info span {
+    color: var(--clr-dark);
+    font-weight: 600;
+}
+
+.skills-bar .bar .progress-line {
+    position: relative;
+    height: 5px;
+    width: 100%;
+    background-color: #ede8e8;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05),
+        0px 1px 1px rgba(255, 255, 255, 0.8);
+    transform: scaleX(0);
+}
+
+.bar .progress-line span {
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    background-color: var(--clr-accent);
+    border-radius: 10px;
+    transform: scaleX(0);
+}
+
+.progress-line-animation {
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.progess-line-span-animation {
+    transform-origin: left;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
     }
 }

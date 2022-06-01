@@ -9,7 +9,8 @@ $(document).ready(function () {
 
     var menuControl = document.querySelector('.font-awesome-logo')
     var aboutImage = document.querySelector('.about-me__image')
-
+    var skill = document.querySelector('.my-skill')
+    var progress = document.querySelector('.progress-line')
     var offset_nav = $('.header').offset().top;
     if (offset_nav !== 0) {
         $('.header').addClass('header-scroll')
@@ -17,7 +18,7 @@ $(document).ready(function () {
         $('.header').removeClass('header-scroll')
     }
     var avatar_offset = $('.about-me__image').offset().top + aboutImage.height / 3 * 2;
-    
+    var skill_offet = $('.my-skill').offset().top - skill.clientHeight;
     $(window).scroll(function (event) {
         var st = $(this).scrollTop();
         if (st === 0) {
@@ -28,6 +29,15 @@ $(document).ready(function () {
         if (st + window.innerHeight < avatar_offset) {
             $('.about-me__image').addClass('transform-image')
         } else $('.about-me__image').removeClass('transform-image')
+
+        if(st < skill_offet) {
+            console.log('a');
+            $('.progress-line').removeClass('progress-line-animation');
+            $('.progess-line-span').removeClass('progess-line-span-animation')
+        } else {
+            $('.progress-line').addClass('progress-line-animation');
+            $('.progess-line-span').addClass('progess-line-span-animation')
+        }
 
     })
     menuControl.addEventListener('click', () => {
