@@ -43,9 +43,12 @@ $(document).ready(function () {
         if (menuControl.classList.contains('fa-bars')) {
             menuControl.classList.remove('fa-bars')
             menuControl.classList.add('fa-close')
+            $('.nav').removeClass('nav-animation')
+            $('.nav').addClass('nav-small-screen')
         } else {
             menuControl.classList.remove('fa-close')
             menuControl.classList.add('fa-bars')
+            $('.nav').addClass('nav-animation')            
         }
 
         if (aboutImage.classList.contains('transform-image')) {
