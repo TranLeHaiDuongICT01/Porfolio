@@ -30,7 +30,7 @@ $(document).ready(function () {
             $('.about-me__image').addClass('transform-image')
         } else $('.about-me__image').removeClass('transform-image')
 
-        if(st < skill_offet) {
+        if (st < skill_offet) {
             $('.progress-line').removeClass('progress-line-animation');
             $('.progess-line-span').removeClass('progess-line-span-animation')
         } else {
@@ -48,13 +48,10 @@ $(document).ready(function () {
         } else {
             menuControl.classList.remove('fa-close')
             menuControl.classList.add('fa-bars')
-            $('.nav').addClass('nav-animation')            
+            $('.nav').addClass('nav-animation')
+            // $('.nav').removeClass('nav-small-screen')     
         }
 
-        if (aboutImage.classList.contains('transform-image')) {
-            $('.about-me__image').removeClass('transform-image')
-        } else {
-            $('.about-me__image').addClass('transform-image')
-        }
+        aboutImage.classList.toggle('transform-image')
     })
 });

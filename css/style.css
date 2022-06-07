@@ -1,9 +1,13 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     margin: 0;
     padding: 0;
+}
+
+html {
+    scroll-behavior: smooth !important;
 }
 
 /* Custom Properties */
@@ -130,17 +134,22 @@ h3 {
 }
 
 .nav {
-    transform: transform 0.5s;
+    transform: 0.5s;
+}
+
+.logo i {
+    transition: 0.5s;
 }
 
 @media (min-width: 940px) {
     .logo i {
         opacity: 0;
         visibility: hidden;
+        position: absolute;
     }
 
     .nav {
-        display: inline-block;
+        display: flex;
     }
 
     .nav__list {
@@ -149,6 +158,8 @@ h3 {
         flex-direction: row;
         gap: 1rem;
         font-size: 1.35rem;
+        align-items: center;
+        justify-content: center;
     }
 
     .nav__item a {
@@ -162,29 +173,48 @@ h3 {
         color: var(--clr-accent);
     }
 
-    .nav__item a {
+    .header-scroll .nav a {
         background:
-            linear-gradient(to right, var(--clr-accent), var(--clr-accent)),
-            linear-gradient(to right, var(--clr-accent), var(--clr-accent));
+            linear-gradient(to right, white, white),
+            linear-gradient(to right, white, white);
         background-size: 0% 0.1em, 0 0.1em;
         background-position: 100% 100%, 0 100%;
         background-repeat: no-repeat;
         transition: background-size 500ms;
     }
 
-    .nav__item a:hover {
+    .header-scroll a:hover {
         background-size: 0 0.1em, 100% 0.1em;
     }
+
+    .header-scroll .nav a:hover {
+        color: white;
+    }
+}
+
+.header-scroll .logo__title--duong {
+    color: white;
+}
+
+.nav__item a {
+    background:
+        linear-gradient(to right, var(--clr-accent), var(--clr-accent)),
+        linear-gradient(to right, var(--clr-accent), var(--clr-accent));
+    background-size: 0% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 500ms;
+}
+
+.nav__item a:hover {
+    background-size: 0 0.1em, 100% 0.1em;
 }
 
 @media (max-width: 940px) {
     .logo i {
         z-index: 4;
-    }
-
-    .nav-animation {
-        transition: 0s;
-        transform: translateX(-100%);
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav {
@@ -198,9 +228,6 @@ h3 {
         justify-content: center;
         align-items: center;
         z-index: 2;
-    }
-
-    .nav-small-screen {
         transition: 0.5s;
     }
 
@@ -210,6 +237,7 @@ h3 {
         flex-direction: column;
         gap: 3rem;
         font-size: 1.35rem;
+        align-items: center;
     }
 
     .nav .nav__item a {
@@ -221,6 +249,11 @@ h3 {
 
     .nav .nav__item a:hover {
         color: var(--clr-accent);
+    }
+
+    .nav-animation {
+        transition: 0.5s;
+        left: -100%;
     }
 }
 
@@ -258,28 +291,6 @@ h3 {
 .header-scroll {
     background-color: var(--clr-accent);
     padding: 1rem;
-}
-
-.header-scroll .logo__title--duong {
-    color: white;
-}
-
-.header-scroll .nav a:hover {
-    color: white;
-}
-
-.header-scroll .nav a {
-    background:
-        linear-gradient(to right, white, white),
-        linear-gradient(to right, white, white);
-    background-size: 0% 0.1em, 0 0.1em;
-    background-position: 100% 100%, 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 500ms;
-}
-
-.header-scroll a:hover {
-    background-size: 0 0.1em, 100% 0.1em;
 }
 
 
@@ -506,6 +517,7 @@ h3 {
 .footer__link:hover {
     text-decoration: underline;
 }
+
 .social-list {
     list-style: none;
     display: flex;
@@ -517,6 +529,7 @@ h3 {
 .social-list__item {
     margin: 0 .5em;
 }
+
 .social-list__link {
     padding: .5em;
 }
