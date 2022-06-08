@@ -2,15 +2,15 @@ $(document).ready(function () {
     const menuControl = document.querySelector('.font-awesome-logo')
     const aboutImage = document.querySelector('.about-me__image')
     const skill = document.querySelector('.my-skill')
-    const navLinks = document.querySelectorAll('.nav__link')
+    const navList = document.querySelector('.nav__list')
 
-    navLinks.forEach(function (nav) {
-        nav.addEventListener('click', function (e) {
-            e.preventDefault()
-            const id = nav.getAttribute('href')
+    navList.addEventListener('click', function (e) {
+        e.preventDefault()
+        if (e.target.classList.contains('nav__link')) {
+            const id = e.target.getAttribute('href')
             document.querySelector(id).scrollIntoView({ behavior: 'smooth' })
             hideSidebar()
-        })
+        }
     })
 
     var typed = new Typed('#intro-span', {
