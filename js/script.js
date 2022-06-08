@@ -1,5 +1,18 @@
 $(document).ready(function () {
-    var introSpan = document.getElementById('intro-span')
+    const menuControl = document.querySelector('.font-awesome-logo')
+    const aboutImage = document.querySelector('.about-me__image')
+    const skill = document.querySelector('.my-skill')
+    const navLinks = document.querySelectorAll('.nav__link')
+
+    navLinks.forEach(function (nav) {
+        nav.addEventListener('click', function (e) {
+            e.preventDefault()
+            const id = nav.getAttribute('href')
+            document.querySelector(id).scrollIntoView({ behavior: 'smooth' })
+            hideSidebar()
+        })
+    })
+
     var typed = new Typed('#intro-span', {
         strings: ['hard coder', 'programmer', 'developer'],
         typeSpeed: 100,
@@ -7,10 +20,6 @@ $(document).ready(function () {
         loop: true
     })
 
-    var menuControl = document.querySelector('.font-awesome-logo')
-    var aboutImage = document.querySelector('.about-me__image')
-    var skill = document.querySelector('.my-skill')
-    var progress = document.querySelector('.progress-line')
     var offset_nav = $('.header').offset().top;
     if (offset_nav !== 0) {
         $('.header').addClass('header-scroll')
@@ -39,17 +48,24 @@ $(document).ready(function () {
         }
 
     })
+
+    const showSidebar = () => {
+        menuControl.classList.remove('fa-bars')
+        menuControl.classList.add('fa-close')
+        $('.nav').removeClass('nav-animation')
+    }
+
+    const hideSidebar = () => {
+        menuControl.classList.remove('fa-close')
+        menuControl.classList.add('fa-bars')
+        $('.nav').addClass('nav-animation')
+    }
+
     menuControl.addEventListener('click', () => {
         if (menuControl.classList.contains('fa-bars')) {
-            menuControl.classList.remove('fa-bars')
-            menuControl.classList.add('fa-close')
-            $('.nav').removeClass('nav-animation')
-            $('.nav').addClass('nav-small-screen')
+            showSidebar()
         } else {
-            menuControl.classList.remove('fa-close')
-            menuControl.classList.add('fa-bars')
-            $('.nav').addClass('nav-animation')
-            // $('.nav').removeClass('nav-small-screen')     
+            hideSidebar()
         }
 
         aboutImage.classList.toggle('transform-image')

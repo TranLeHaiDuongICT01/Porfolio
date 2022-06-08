@@ -52,11 +52,6 @@ img {
     max-width: 100%;
 }
 
-:focus {
-    outline: 3px solid var(--clr-accent);
-    outline-offset: 3px;
-}
-
 a {
     text-decoration: none;
     color: var(--clr-accent);
@@ -292,7 +287,6 @@ h3 {
     background-color: var(--clr-accent);
     padding: 1rem;
 }
-
 
 /* intro section */
 
