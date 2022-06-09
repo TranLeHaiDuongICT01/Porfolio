@@ -133,14 +133,13 @@ h3 {
 }
 
 .logo i {
+    z-index: 4;
     transition: 0.5s;
 }
 
 @media (min-width: 940px) {
     .logo i {
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
+        display: none;
     }
 
     .nav {
@@ -207,9 +206,7 @@ h3 {
 
 @media (max-width: 940px) {
     .logo i {
-        z-index: 4;
-        opacity: 1;
-        visibility: visible;
+        display: block;
     }
 
     .nav {
@@ -255,7 +252,7 @@ h3 {
 .header {
     width: 100%;
     transition: 0.5s;
-    padding: 1.5rem;
+    padding: 3rem 3rem 0;
 }
 
 .logo {
@@ -264,7 +261,6 @@ h3 {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 4rem 0 4rem;
 }
 
 
@@ -285,18 +281,22 @@ h3 {
 
 .header-scroll {
     background-color: var(--clr-accent);
-    padding: 1rem;
+    padding: 2rem 2.5rem;
 }
 
 /* intro section */
 
 .intro {
     position: relative;
+    background-color: rgb(122, 119, 119);
     background-image: url(../img/backgroundimage.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     flex-direction: column;
     color: #fff;
 }
@@ -342,7 +342,7 @@ h3 {
 }
 
 .about-me__body img {
-    max-width: 100%;
+    max-width: 90%;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -359,7 +359,7 @@ h3 {
 }
 
 .transform-image {
-    transform: translateX(-150%);
+    transform: translateX(-100%);
 }
 
 
