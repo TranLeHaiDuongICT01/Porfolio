@@ -356,6 +356,7 @@ h3 {
 .about-me__image {
     overflow: hidden;
     transition: transform 0.5s;
+    width: 100%;
 }
 
 .transform-image {
@@ -424,6 +425,7 @@ h3 {
 .my-project-container {
     display: flex;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .section__title--skill {
@@ -526,4 +528,47 @@ h3 {
 
 .social-list__link {
     padding: .5em;
+}
+
+.skills {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.skills h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: var(--clr-accent);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill i {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.skill p {
+    margin: 0;
+    font-weight: 600;
+    color: #444;
 }
